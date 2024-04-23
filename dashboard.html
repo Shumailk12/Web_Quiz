@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Welcome <span id="usernameDisplay"></span></h1>
+  <p>Roll Number: <span id="rollNumberDisplay"></span></p>
+  <p>Batch: <span id="batchDisplay"></span></p>
+  <p>Section: <span id="sectionDisplay"></span></p>
+  
+  
+  <a href="quiz.html"><button>Start Quiz</button></a>
+</div>
+
+<script>
+function submitForm() {
+    var username = document.getElementById('username').value;
+    var rollNumber = document.getElementById('rollNumber').value;
+    var batch = document.getElementById('batch').value;
+    var section = document.getElementById('section').value;
+  
+    localStorage.setItem('username', username);
+    localStorage.setItem('rollNumber', rollNumber);
+    localStorage.setItem('batch', batch);
+    localStorage.setItem('section', section);
+  
+    window.location.href = 'dashboard.html';
+  }
+  
+  function displayUserInfo() {
+    var username = localStorage.getItem('username');
+    var rollNumber = localStorage.getItem('rollNumber');
+    var batch = localStorage.getItem('batch');
+    var section = localStorage.getItem('section');
+  
+    document.getElementById('usernameDisplay').textContent = username;
+    document.getElementById('rollNumberDisplay').textContent = rollNumber;
+    document.getElementById('batchDisplay').textContent = batch;
+    document.getElementById('sectionDisplay').textContent = section;
+  }
+  
+  displayUserInfo();
+  
+  </script>
+</body>
+</html>

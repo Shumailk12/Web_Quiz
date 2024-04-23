@@ -1,0 +1,31 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div id="results">
+    <h2>Quiz Results</h2>
+    <p>Roll Number: <span id="rollNumber"></span></p>
+    <p>Name: <span id="name"></span></p>
+    <p>Batch: <span id="batch"></span></p>
+    <p>Section: <span id="section"></span></p>
+    <p>Topic: <span id="topic"></span></p>
+    <p>Marks: <span id="marks"></span></p>
+  </div>
+  <script>
+    const studentDetails = JSON.parse(sessionStorage.getItem('studentDetails'));
+    const marks = sessionStorage.getItem('marks');
+    document.getElementById('rollNumber').textContent = studentDetails.rollNumber;
+    document.getElementById('name').textContent = studentDetails.name;
+    document.getElementById('batch').textContent = studentDetails.batch;
+    document.getElementById('section').textContent = studentDetails.section;
+    document.getElementById('topic').textContent = studentDetails.topic;
+    document.getElementById('marks').textContent = marks;
+  </script>
+</body>
+</html>
